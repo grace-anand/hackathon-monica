@@ -1,9 +1,37 @@
 ---
+import { cn } from '@/lib/utils';
 import Layout from '../../layouts/Layout.astro'
+
+const categories = [ 'All', 'Coverage', 'Claim', 'Terms', 'Payment', 'Others' ]
+const iframes = [
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
+  {url: 'https://www.videoask.com/f4mtqiyc7', height: '300px',},
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
+]
 ---
 
 <Layout active='learn'>
-  <section>
-    
+  <section class="px-5">
+    <ul class="flex gap-2 overflow-x-scroll font-semibold scrollbar-hide md:scrollbar-default mb-5">
+      {categories.map((category, index) => (
+          <li class="gap-2">
+            <a href="#" class={cn("text-xl underline-offset-4 decoration-4", index === 0 ? "underline" : "")}>{category}</a>
+          </li>
+        ))}
+    </ul>
+
+    <div class="flex gap-3">
+      <div class="flex-col">
+        {iframes.map((iframe, idx) => (
+              idx % 2 === 0 && <iframe class="mb-4" src={iframe.url} allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;" width="100%" height={iframe.height} style="border: none; border-radius: 24px"></iframe>
+        ))}
+      </div> 
+      <div class="flex-col">
+        {iframes.map((iframe, idx) => (
+          idx % 2 !== 0 && <iframe class="mb-4" src={iframe.url} allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;" width="100%" height={iframe.height} style="border: none; border-radius: 24px"></iframe>
+        ))}
+      </div> 
+    </div>
   </section>
 </Layout>
