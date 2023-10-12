@@ -4,10 +4,10 @@ import Layout from '../../layouts/Layout.astro'
 
 const categories = [ 'All', 'Coverage', 'Claim', 'Terms', 'Payment', 'Others' ]
 const iframes = [
-  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
-  {url: 'https://www.videoask.com/f4mtqiyc7', height: '300px',},
-  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
-  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px',},
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "felix.png", question: "How do I make a claim?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why is my premium so high?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7', height: '300px', imageUrl: "anand.jpg", question: "What is the difference between the plans?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '300px', imageUrl: "aravind.gif" , question: "Why should I buy travel insurance?" },
 ]
 ---
 
@@ -24,12 +24,22 @@ const iframes = [
     <div class="flex gap-3">
       <div class="flex-col">
         {iframes.map((iframe, idx) => (
-              idx % 2 === 0 && <iframe class="mb-4" src={iframe.url} allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;" width="100%" height={iframe.height} style="border: none; border-radius: 24px"></iframe>
+              idx % 2 === 0 && (
+              <a href={iframe.url} class="relative rounded-md">
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover"></img>
+                  <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
+                </a>
+              )
         ))}
       </div> 
       <div class="flex-col">
         {iframes.map((iframe, idx) => (
-          idx % 2 !== 0 && <iframe class="mb-4" src={iframe.url} allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;" width="100%" height={iframe.height} style="border: none; border-radius: 24px"></iframe>
+          idx % 2 !== 0 && (
+                <a href={iframe.url} class="relative rounded-md overflow-hidden">
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover"></img>
+                  <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
+                </a>
+              )
         ))}
       </div> 
     </div>
