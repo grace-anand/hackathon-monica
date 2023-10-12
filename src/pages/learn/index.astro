@@ -13,7 +13,7 @@ const iframes = [
 
 <Layout active='learn'>
   <section class="px-5">
-    <ul class="flex gap-2 overflow-x-scroll font-semibold scrollbar-hide md:scrollbar-default mb-5">
+    <ul class="flex gap-2 overflow-x-hidden">
       {categories.map((category, index) => (
           <li class="gap-2">
             <a href="#" class={cn("text-xl underline-offset-4 decoration-4", index === 0 ? "underline" : "")}>{category}</a>
