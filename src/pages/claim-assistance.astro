@@ -1,12 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
+const iframes = [
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "felix.png", question: "How do I make a claim?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "How can I get a quote?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why is my premium so high?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7', height: '300px', imageUrl: "anand.jpg", question: "What is the difference between the plans?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '300px', imageUrl: "aravind.gif" , question: "Why should I buy travel insurance?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why do I need life insurance?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why should you work with us?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why should you work with us?" },
+]
 ---
 
 <Layout active='profile'>
   <section class="px-5">
-    <h1 class="text-4xl font-bold">Claim assistance</h1>
-    <div class="flex w-full bg-[rgb(13,128,130)] rounded-xl">
+    <h1 class="text-2xl font-semibold mb-4">Claim assistance</h1>
+    <div class="flex w-full bg-[rgb(13,128,130)] rounded-xl mb-5">
       <span class="bg-white m-3 px-6 py-2 rounded-lg text-xl font-semibold">
         My policies
       </span>
@@ -14,5 +23,63 @@ import Layout from '../layouts/Layout.astro'
         Track claims
       </span>
     </div>
+    <h1 class="text-2xl font-semibold mb-4">All policy details</h1>
+
+    <a href="/bravo" class="relative w-full flex gap-3 p-2 outline outline-1 rounded-md mb-3">
+      <img src="/generali.png" class="rounded-md" width="40px"></img>
+      <div class="">
+        <h1 class="font-bold">
+          Generali Bravo Travel Protector
+        </h1>
+        <p class="text-gray-300 text-sm">
+          12 Oct 2023
+        </p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" class="absolute bottom-2 right-2" viewBox="0 -960 960 960" width="24"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+    </a>
+    <a href="/bravo" class="relative w-full flex gap-3 p-2 outline outline-1 rounded-md mb-3">
+      <img src="/allianz.png" class="rounded-md" width="40px"></img>
+      <div class="">
+        <h1 class="font-bold">
+          Allianz Travel Silver Plan
+        </h1>
+        <p class="text-gray-300 text-sm">
+          12 Oct 2023
+        </p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" class="absolute bottom-2 right-2" viewBox="0 -960 960 960" width="24"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+    </a>
+
+    <a href="/home" class="text-center w-full flex justify-center mb-5">
+      <div class="shadow-md rounded-md py-3 flex w-full justify-center gap-4">
+        <p class="text-xl">
+          Contact an insurer
+        </p>
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" width="24"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+      </div>
+    </a>
+    <h1 class="text-2xl font-semibold mb-4">Learn how to file a claim</h1><div class="flex gap-3">
+      <div class="flex-col">
+        {iframes.map((iframe, idx) => (
+              idx % 2 === 0 && (
+              <a href={iframe.url} class="relative rounded-md">
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover" style="border-radius: 10px"></img>
+                  <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
+                </a>
+              )
+        ))}
+      </div> 
+      <div class="flex-col">
+        {iframes.map((iframe, idx) => (
+          idx % 2 !== 0 && (
+                <a href={iframe.url} class="relative rounded-md overflow-hidden">
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" class="absolute -z-10 inset-0 bg-cover" style="border-radius: 10px"></img>
+                  <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
+                </a>
+              )
+        ))}
+      </div> 
+    </div>
+
   </section>
 </Layout>

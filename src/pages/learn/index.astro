@@ -8,12 +8,16 @@ const iframes = [
   {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why is my premium so high?" },
   {url: 'https://www.videoask.com/f4mtqiyc7', height: '300px', imageUrl: "anand.jpg", question: "What is the difference between the plans?" },
   {url: 'https://www.videoask.com/f4mtqiyc7',height: '300px', imageUrl: "aravind.gif" , question: "Why should I buy travel insurance?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why do I need life insurance?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "felix.png", question: "How can I get a quote?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why should you work with us?" },
+  {url: 'https://www.videoask.com/f4mtqiyc7',height: '200px', imageUrl: "tina.png", question: "Why should you work with us?" },
 ]
 ---
 
 <Layout active='learn'>
   <section class="px-5">
-    <ul class="flex gap-2 overflow-x-hidden">
+    <ul class="flex gap-2 overflow-x-hidden mb-4">
       {categories.map((category, index) => (
           <li class="gap-2">
             <a href="#" class={cn("text-xl underline-offset-4 decoration-4", index === 0 ? "underline" : "")}>{category}</a>
@@ -26,7 +30,7 @@ const iframes = [
         {iframes.map((iframe, idx) => (
               idx % 2 === 0 && (
               <a href={iframe.url} class="relative rounded-md">
-                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover"></img>
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover" style="border-radius: 10px"></img>
                   <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
                 </a>
               )
@@ -36,7 +40,7 @@ const iframes = [
         {iframes.map((iframe, idx) => (
           idx % 2 !== 0 && (
                 <a href={iframe.url} class="relative rounded-md overflow-hidden">
-                  <img src={iframe.imageUrl} class="mb-4" width="100%" height={iframe.height} class="absolute -z-10 inset-0 bg-cover"></img>
+                  <img src={iframe.imageUrl} class="mb-4" width="100%" class="absolute -z-10 inset-0 bg-cover" style="border-radius: 10px"></img>
                   <p class="absolute z-10 text-white text-lg font-semibold bottom-0 px-2">{iframe.question}</p>
                 </a>
               )
