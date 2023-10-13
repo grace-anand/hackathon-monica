@@ -1,4 +1,5 @@
 ---
+import { cn } from '@/lib/utils';
 interface Props {
 	image: string;
 	body: string;
@@ -6,15 +7,16 @@ interface Props {
 		amount: string;
 		title: string;
 	}[];
+	active: boolean;
 }
 
-const { image, body, perks } = Astro.props;
+const { image, body, perks, active } = Astro.props;
 ---
-<div class="card rounded-xl shadow-md">
+<div class={cn('card rounded-xl shadow-md', active ? 'scale-100' : 'scale-90')}>
 	<div class="relative h-80 w-80 overflow-hidden rounded-lg">
 		<img src={image} alt="gen-in" class="absolute inset-0 rounded-md">
 	</div>
-	<div class="card-body p-3">
+	<div class="card-body p-2">
 		<div class="flex gap-7 mb-3">
 			<span>
 				<h1 class="text-2xl font-semibold">
@@ -41,7 +43,7 @@ const { image, body, perks } = Astro.props;
 				</p>
 			</span>
 		</div>
-		<p class="text-gray-500 mb-2 line-clamp-4">
+		<p class="text-gray-500 mb-2 line-clamp-3">
 			{body}
 		</p>
 		<button onclick="alert('coming soon 😉')" class="px-4 text-white bg-[#1BEEDC] rounded-md py-2 flex w-full justify-center gap-4">
