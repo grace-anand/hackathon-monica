@@ -1,0 +1,68 @@
+---
+import Card from '@/components/Card.astro';
+const prodDetails = [
+  {
+    image: 'https://images.unsplash.com/photo-1646836366532-a282ebbd4703?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2549&q=80',
+    body: 'Overseas medical expense and rollow-vo medical expense within 3 months. No cancelation and automatically extend ne penos of insurance up c 10 days free of charge for Sincle Trip. Learn more',
+    perks: [
+      {
+        amount: '$100k',
+        title: 'Medical Expenses'
+      },
+      {
+        amount: '$20k',
+        title: 'Trip Cancellation'
+      },
+      {
+        amount: '$15k',
+        title: 'Loss or Damage'
+      },
+    ],
+  },
+  {
+	image: 'https://plus.unsplash.com/premium_photo-1661808661282-e9201e5a7936?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNxdWFyZSUyMG1vdW50YWluc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
+	body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+	perks: [
+  {
+        amount: '$100k',
+        title: 'Medical Expenses'
+      },
+      {
+        amount: '$20k',
+        title: 'Trip Cancellation'
+      },
+      {
+        amount: '$15k',
+        title: 'Loss or Damage'
+      },
+	],
+}
+]
+---
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Astro description" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/*" href="/favicon/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Monica</title>
+</head>
+  <section class="px-5">
+    <h1 class="text-2xl font-semibold mb-4">
+      We found 5 insurances for you!
+    </h1>
+    <div class="flex overflow-scroll gap-5 items-center pb-3">
+      <Card {...prodDetails[0]} active={true}/>
+      <Card {...prodDetails[1]} active={true}/>
+      <Card {...prodDetails[0]} active={true}/>
+    </div>
+    <div class="flex w-full justify-center mb-36">
+      <div class="flex justify-center gap-2 mt-5">
+        <div class="w-7 h-2 rounded-full bg-[#1BEEDC]"></div>
+        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+      </div>
+    </div>
+  </section>
