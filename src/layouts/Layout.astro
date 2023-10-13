@@ -23,7 +23,7 @@ const { active } = Astro.props;
 	</head>
 	<body>
 		<Header/>
-		<section class="fixed bottom-0 w-full px-7 bg-white z-20">
+		<section class="fixed bottom-0 w-full px-7 bg-white z-50">
 			<div class="flex justify-between py-6 relative">
 				<ul class="flex gap-4">
 					<li class={cn( active==='discover' ? "fill-[#1BEEDC] text-[#1BEEDC]" : "")}>
@@ -39,11 +39,11 @@ const { active } = Astro.props;
 						</a>
 					</li>
 				</ul>
-				<div class="absolute left-1/2 -translate-x-1/2 -top-10 rounded-full p-5 bg-[#1BEEDC] outline-[white] outline-8 outline" >
-					<a href="https://www.videoask.com/f4mtqiyc7">
+        <a href="https://www.videoask.com/f4mtqiyc7" class="z-50">
+				  <div class="absolute left-1/2 -translate-x-1/2 -top-10 rounded-full p-5 bg-[#1BEEDC] outline-[white] outline-8 outline" >
 						<svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"></path> <path d="M19 10v2a7 7 0 01-14 0v-2"></path> <line x1="12" y1="19" x2="12" y2="23"></line> <line x1="8" y1="23" x2="16" y2="23"></line> </g></svg>
-					</a>
-				</div>
+          </div>
+        </a>
 				<ul class="flex gap-4">
 					<li class={cn( active==='rewards' ? "fill-[#1BEEDC] text-[#1BEEDC]" : "")}>
 						<a href="/rewards" class="grid place-items-center">
